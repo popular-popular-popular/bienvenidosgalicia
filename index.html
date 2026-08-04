@@ -22,6 +22,7 @@
       color: #2d2a27;
       line-height: 1.6;
       padding: 0 1rem;
+      padding-bottom: 80px; /* espacio para el aviso de cookies fijo */
     }
 
     .container {
@@ -347,6 +348,59 @@
       font-weight: 400;
     }
 
+    /* ===== AVISO DE COOKIES (fijo al final) ===== */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #2d2a27;
+      color: #fef7f3;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      z-index: 1000;
+      border-top: 4px solid var(--salmón);
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease;
+    }
+
+    .cookie-banner.hidden {
+      transform: translateY(100%);
+    }
+
+    .cookie-banner p {
+      margin: 0;
+      font-size: 0.95rem;
+      flex: 1;
+    }
+
+    .cookie-banner a {
+      color: var(--salmón-claro);
+      text-decoration: underline;
+    }
+
+    .cookie-banner .cookie-btn {
+      background: var(--salmón);
+      border: none;
+      padding: 0.5rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 700;
+      color: #1f1c19;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
+
+    .cookie-banner .cookie-btn:hover {
+      background: var(--salmón-claro);
+      transform: scale(1.02);
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 700px) {
       header h1 {
@@ -370,6 +424,11 @@
       footer {
         flex-direction: column;
         text-align: center;
+      }
+      .cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
       }
     }
 
@@ -460,9 +519,9 @@
       <h2>Contacto</h2>
       <div class="contacto-wrap">
         <div class="contacto-info">
-          📧 <a href="mailto:info@bienvenidogalicia.com">info@bienvenidogalicia.com</a>
+          📧 <a href="mailto:contacto@bienvenidosgalicia.vercel.app">contacto@bienvenidosgalicia.vercel.app</a>
         </div>
-        <button class="btn-salmón" onclick="window.location.href='mailto:info@bienvenidogalicia.com';">Enviar mensaje</button>
+        <button class="btn-salmón" onclick="window.location.href='mailto:contacto@bienvenidosgalicia.vercel.app';">Enviar mensaje</button>
       </div>
       <p style="margin-top: 1.2rem; font-size: 0.9rem; background: #f2efed; padding: 0.5rem 1.5rem; border-radius: 60px; display: inline-block;">
         ⚡ Atención personalizada · Respondemos en 24h
@@ -502,7 +561,7 @@
       <p>Nuestra página puede contener enlaces a sitios externos. No somos responsables de sus políticas de privacidad.</p>
 
       <h3>5. Tus derechos</h3>
-      <p>Puedes solicitar la eliminación de tus datos personales en cualquier momento escribiéndonos a <a href="mailto:info@bienvenidogalicia.com">info@bienvenidogalicia.com</a>.</p>
+      <p>Puedes solicitar la eliminación de tus datos personales en cualquier momento escribiéndonos a <a href="mailto:contacto@bienvenidosgalicia.vercel.app">contacto@bienvenidosgalicia.vercel.app</a>.</p>
 
       <a href="/#top" class="back-link">← Volver al inicio</a>
     </section>
@@ -546,5 +605,30 @@
 
   </div>
   <!-- cierre container -->
+
+  <!-- ===== AVISO DE COOKIES (con JavaScript) ===== -->
+  <div id="cookieBanner" class="cookie-banner">
+    <p>
+      🍪 Usamos cookies técnicas para mejorar tu experiencia. Al continuar navegando, aceptas nuestra 
+      <a href="/#privacidad">Política de privacidad</a> y el uso de cookies.
+    </p>
+    <button class="cookie-btn" onclick="aceptarCookies()">Aceptar</button>
+  </div>
+
+  <script>
+    // Función para ocultar el banner y guardar la preferencia en localStorage
+    function aceptarCookies() {
+      document.getElementById('cookieBanner').classList.add('hidden');
+      localStorage.setItem('cookiesAceptadas', 'true');
+    }
+
+    // Al cargar la página, comprobar si ya aceptó las cookies
+    window.onload = function() {
+      if (localStorage.getItem('cookiesAceptadas') === 'true') {
+        document.getElementById('cookieBanner').classList.add('hidden');
+      }
+    };
+  </script>
+
 </body>
 </html>
