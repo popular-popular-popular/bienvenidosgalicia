@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BienvenidoGalicia · Argentina</title>
   <!-- Google Font para tipografía moderna -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
   <style>
     /* ===== RESET Y BASE ===== */
     * {
@@ -18,7 +18,7 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #fef7f3; /* base cálida muy clara */
+      background-color: #fef7f3;
       color: #2d2a27;
       line-height: 1.6;
       padding: 0 1rem;
@@ -32,7 +32,7 @@
 
     /* ===== COLOR SALMÓN (paleta) ===== */
     :root {
-      --salmón: #FA8072;      /* salmón medio */
+      --salmón: #FA8072;
       --salmón-claro: #FFA07A;
       --salmón-suave: #fde8e0;
       --salmón-oscuro: #d96c5e;
@@ -44,7 +44,7 @@
     header {
       background: linear-gradient(135deg, var(--salmón-claro) 0%, var(--salmón) 100%);
       padding: 2rem 2rem 1.8rem;
-      border-radius: 32px 32px 32px 32px;
+      border-radius: 32px;
       box-shadow: 0 8px 20px rgba(250, 128, 114, 0.25);
       margin-bottom: 2.5rem;
       text-align: center;
@@ -106,7 +106,7 @@
       color: var(--salmón-oscuro);
     }
 
-    /* ===== SECCIONES ===== */
+    /* ===== SECCIONES PRINCIPALES ===== */
     section {
       background: white;
       border-radius: 32px;
@@ -177,7 +177,6 @@
       width: fit-content;
     }
 
-    /* ===== GUÍA DE VIAJE ===== */
     .guia-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -195,7 +194,6 @@
       border: 1px solid #fbcbc0;
     }
 
-    /* ===== BLOG / NOTICIAS ===== */
     .blog-list {
       display: flex;
       flex-direction: column;
@@ -217,7 +215,6 @@
       margin-left: 1rem;
     }
 
-    /* ===== CONTACTO ===== */
     .contacto-wrap {
       display: flex;
       flex-wrap: wrap;
@@ -262,7 +259,57 @@
       transform: scale(1.02);
     }
 
-    /* ===== FOOTER (transparencia / políticas) ===== */
+    /* ===== SECCIONES LEGALES ===== */
+    .legal-section {
+      background: #fcf8f6;
+      border: 1px solid #fadcd2;
+      scroll-margin-top: 2rem;
+    }
+
+    .legal-section h2 {
+      color: var(--salmón-oscuro);
+    }
+
+    .legal-section h2::before {
+      content: "⚖️";
+      font-size: 2rem;
+    }
+
+    .legal-section h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 1.5rem 0 0.5rem;
+      color: #1f1c19;
+    }
+
+    .legal-section p,
+    .legal-section li {
+      color: #3d3834;
+      margin-bottom: 0.6rem;
+    }
+
+    .legal-section ul {
+      padding-left: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .legal-section .back-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: var(--salmón);
+      color: white;
+      padding: 0.4rem 1.8rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .legal-section .back-link:hover {
+      background: var(--salmón-oscuro);
+    }
+
+    /* ===== FOOTER ===== */
     footer {
       margin-top: 3rem;
       padding: 2rem 1.5rem;
@@ -339,23 +386,23 @@
 <body>
   <div class="container">
 
-    <!-- HEADER principal con color salmón -->
+    <!-- ===== HEADER ===== -->
     <header>
       <h1>🇦🇷 <span>BienvenidoGalicia</span></h1>
       <p>✨ Argentina · guía de lugares y cultura</p>
     </header>
 
-    <!-- NAVEGACIÓN -->
+    <!-- ===== NAVEGACIÓN ===== -->
     <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Destinos</a>
-      <a href="#">Guía de viaje</a>
-      <a href="#">Blog</a>
-      <a href="#">Contacto</a>
+      <a href="/#inicio">Inicio</a>
+      <a href="/#destinos">Destinos</a>
+      <a href="/#guia">Guía de viaje</a>
+      <a href="/#blog">Blog</a>
+      <a href="/#contacto">Contacto</a>
     </nav>
 
-    <!-- SECCIÓN INFORMATIVA: LUGARES -->
-    <section>
+    <!-- ===== DESTINOS ===== -->
+    <section id="destinos">
       <h2>Destinos imperdibles</h2>
       <div class="destino-grid">
         <div class="destino-card">
@@ -381,8 +428,8 @@
       </div>
     </section>
 
-    <!-- GUÍA DE VIAJE (información práctica) -->
-    <section>
+    <!-- ===== GUÍA DE VIAJE ===== -->
+    <section id="guia">
       <h2>Guía de viaje</h2>
       <div class="guia-grid">
         <div class="guia-item">🕒 Clima: templado / variado</div>
@@ -397,8 +444,8 @@
       </p>
     </section>
 
-    <!-- BLOG / NOTICIAS -->
-    <section>
+    <!-- ===== BLOG ===== -->
+    <section id="blog">
       <h2>Blog · novedades</h2>
       <div class="blog-list">
         <div class="blog-item">📰 3 pueblos patagónicos que tenés que conocer <span>— 2 de agosto 2026</span></div>
@@ -408,27 +455,89 @@
       </div>
     </section>
 
-    <!-- CONTACTO + transparencia -->
-    <section>
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto">
       <h2>Contacto</h2>
       <div class="contacto-wrap">
         <div class="contacto-info">
-          📧 <a href="mailto:info@bienvenidogalicia.com">info@bienvenidogalicia.com</a> &nbsp;|&nbsp; 📞 +54 11 2345-6789
+          📧 <a href="mailto:info@bienvenidogalicia.com">info@bienvenidogalicia.com</a>
         </div>
-        <button class="btn-salmón" onclick="alert('¡Gracias por escribirnos! Responderemos a la brevedad.')">Enviar mensaje</button>
+        <button class="btn-salmón" onclick="window.location.href='mailto:info@bienvenidogalicia.com';">Enviar mensaje</button>
       </div>
       <p style="margin-top: 1.2rem; font-size: 0.9rem; background: #f2efed; padding: 0.5rem 1.5rem; border-radius: 60px; display: inline-block;">
         ⚡ Atención personalizada · Respondemos en 24h
       </p>
     </section>
 
-    <!-- FOOTER con políticas y transparencia (requisito Google Ads) -->
+    <!-- ========================================================= -->
+    <!-- ===== SECCIONES LEGALES ===== -->
+    <!-- ========================================================= -->
+
+    <!-- ACERCA DE NOSOTROS -->
+    <section id="acerca" class="legal-section">
+      <h2>Acerca de nosotros</h2>
+      <p><strong>BienvenidoGalicia</strong> es un proyecto independiente de guía de viajes creado por apasionados por Argentina.</p>
+      <p>Nuestro objetivo es compartir información útil, actualizada y auténtica sobre los destinos más fascinantes del país, desde la vibrante Buenos Aires hasta la imponente Patagonia.</p>
+      <p>Creemos en el viaje consciente y en conectar a los viajeros con la cultura, la gastronomía y las tradiciones locales. Toda la información que publicamos es el resultado de nuestra propia experiencia y de la colaboración con amigos y viajeros que aman Argentina tanto como nosotros.</p>
+      <p><strong>¿Por qué "Galicia"?</strong> Es un homenaje a la herencia gallega en Argentina y una invitación a sentirte bienvenido, como en casa, en cada rincón del país.</p>
+      <a href="/#top" class="back-link">← Volver al inicio</a>
+    </section>
+
+    <!-- POLÍTICA DE PRIVACIDAD -->
+    <section id="privacidad" class="legal-section">
+      <h2>Política de privacidad</h2>
+      <p><strong>Última actualización:</strong> 3 de agosto de 2026</p>
+      <p>En <strong>BienvenidoGalicia</strong> nos tomamos muy en serio tu privacidad. Esta política explica cómo recopilamos, usamos y protegemos tu información.</p>
+
+      <h3>1. Información que recopilamos</h3>
+      <p>Recopilamos la información que nos proporcionas voluntariamente a través de nuestro formulario de contacto o correo electrónico, como tu nombre y dirección de correo electrónico.</p>
+
+      <h3>2. Uso de la información</h3>
+      <p>Usamos tu información únicamente para responder a tus consultas y enviarte información relacionada con tus preguntas. No compartimos tus datos con terceros.</p>
+
+      <h3>3. Cookies</h3>
+      <p>Este sitio utiliza cookies técnicas y de sesión para mejorar tu experiencia. No utilizamos cookies de seguimiento publicitario.</p>
+
+      <h3>4. Enlaces externos</h3>
+      <p>Nuestra página puede contener enlaces a sitios externos. No somos responsables de sus políticas de privacidad.</p>
+
+      <h3>5. Tus derechos</h3>
+      <p>Puedes solicitar la eliminación de tus datos personales en cualquier momento escribiéndonos a <a href="mailto:info@bienvenidogalicia.com">info@bienvenidogalicia.com</a>.</p>
+
+      <a href="/#top" class="back-link">← Volver al inicio</a>
+    </section>
+
+    <!-- TÉRMINOS Y CONDICIONES -->
+    <section id="terminos" class="legal-section">
+      <h2>Términos y condiciones</h2>
+      <p><strong>Última actualización:</strong> 3 de agosto de 2026</p>
+      <p>Al usar este sitio web, aceptas los siguientes términos y condiciones.</p>
+
+      <h3>1. Uso del contenido</h3>
+      <p>Todo el contenido de BienvenidoGalicia es informativo y está basado en experiencias personales. No nos hacemos responsables por cambios en horarios, precios o disponibilidad de los servicios mencionados.</p>
+
+      <h3>2. Propiedad intelectual</h3>
+      <p>Los textos, imágenes y diseño de este sitio son propiedad de BienvenidoGalicia. No está permitida su reproducción sin autorización expresa.</p>
+
+      <h3>3. Enlaces a terceros</h3>
+      <p>Este sitio puede contener enlaces a páginas externas. No somos responsables del contenido o prácticas de esos sitios.</p>
+
+      <h3>4. Modificaciones</h3>
+      <p>Nos reservamos el derecho de actualizar estos términos en cualquier momento. Los cambios serán publicados en esta misma sección.</p>
+
+      <h3>5. Ley aplicable</h3>
+      <p>Estos términos se rigen por las leyes de la República Argentina.</p>
+
+      <a href="/#top" class="back-link">← Volver al inicio</a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
       <div class="legal">
-        <a href="#">Acerca de nosotros</a>
-        <a href="#">Política de privacidad</a>
-        <a href="#">Términos y condiciones</a>
-        <a href="#">Cookies</a>
+        <a href="/#acerca">Acerca de nosotros</a>
+        <a href="/#privacidad">Política de privacidad</a>
+        <a href="/#terminos">Términos y condiciones</a>
+        <a href="/#cookies">Cookies</a>
       </div>
       <div class="footer-copy">
         © 2026 BienvenidoGalicia · Argentina
