@@ -3,27 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BienvenidoGalicia · Argentina</title>
-  <!-- Google Font para tipografía moderna -->
+
+  <title>BienvenidoGalicia · Guía de Argentina</title>
+
+  <meta
+    name="description"
+    content="BienvenidoGalicia es una guía independiente con información turística, cultural y práctica sobre destinos de Argentina."
+  />
+
+  <meta name="robots" content="index, follow" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18367889608"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap"
+    rel="stylesheet"
+  />
 
-  gtag('config', 'AW-18367889608');
-</script>
-  
   <style>
-    /* ===== RESET Y BASE ===== */
+    /* =========================================================
+       RESET Y BASE
+    ========================================================= */
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -32,7 +41,17 @@
       color: #2d2a27;
       line-height: 1.6;
       padding: 0 1rem;
-      padding-bottom: 80px; /* espacio para el aviso de cookies fijo */
+      padding-bottom: 80px;
+    }
+
+    :root {
+      --salmon: #FA8072;
+      --salmon-claro: #FFA07A;
+      --salmon-suave: #fde8e0;
+      --salmon-oscuro: #d96c5e;
+      --texto-oscuro: #2d2a27;
+      --gris-claro: #f2efed;
+      --blanco: #ffffff;
     }
 
     .container {
@@ -41,19 +60,17 @@
       padding: 1.5rem 0 3rem;
     }
 
-    /* ===== COLOR SALMÓN (paleta) ===== */
-    :root {
-      --salmón: #FA8072;
-      --salmón-claro: #FFA07A;
-      --salmón-suave: #fde8e0;
-      --salmón-oscuro: #d96c5e;
-      --texto-oscuro: #2d2a27;
-      --gris-claro: #f2efed;
-    }
+    /* =========================================================
+       HEADER
+    ========================================================= */
 
-    /* ===== HEADER ===== */
     header {
-      background: linear-gradient(135deg, var(--salmón-claro) 0%, var(--salmón) 100%);
+      background: linear-gradient(
+        135deg,
+        var(--salmon-claro) 0%,
+        var(--salmon) 100%
+      );
+
       padding: 2rem 2rem 1.8rem;
       border-radius: 32px;
       box-shadow: 0 8px 20px rgba(250, 128, 114, 0.25);
@@ -69,7 +86,7 @@
     }
 
     header h1 span {
-      background: #ffffffcc;
+      background: rgba(255, 255, 255, 0.8);
       padding: 0.1rem 0.8rem;
       border-radius: 60px;
       font-weight: 600;
@@ -88,7 +105,10 @@
       backdrop-filter: blur(2px);
     }
 
-    /* ===== BARRA DE NAVEGACIÓN ===== */
+    /* =========================================================
+       NAVEGACIÓN
+    ========================================================= */
+
     nav {
       background: white;
       padding: 0.8rem 1.5rem;
@@ -99,7 +119,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.2rem 2.5rem;
-      border: 1px solid var(--salmón-suave);
+      border: 1px solid var(--salmon-suave);
     }
 
     nav a {
@@ -112,12 +132,16 @@
       transition: 0.2s;
     }
 
-    nav a:hover {
-      border-bottom-color: var(--salmón);
-      color: var(--salmón-oscuro);
+    nav a:hover,
+    nav a:focus {
+      border-bottom-color: var(--salmon);
+      color: var(--salmon-oscuro);
     }
 
-    /* ===== SECCIONES PRINCIPALES ===== */
+    /* =========================================================
+       SECCIONES
+    ========================================================= */
+
     section {
       background: white;
       border-radius: 32px;
@@ -139,10 +163,14 @@
 
     h2::before {
       content: "•";
-      color: var(--salmón);
+      color: var(--salmon);
       font-size: 2.4rem;
       line-height: 0;
     }
+
+    /* =========================================================
+       DESTINOS
+    ========================================================= */
 
     .destino-grid {
       display: grid;
@@ -155,7 +183,7 @@
       background: var(--gris-claro);
       padding: 1.5rem 1.2rem 1.2rem;
       border-radius: 24px;
-      border-left: 6px solid var(--salmón);
+      border-left: 6px solid var(--salmon);
       transition: 0.2s ease;
     }
 
@@ -167,7 +195,7 @@
     .destino-card h3 {
       font-size: 1.3rem;
       font-weight: 700;
-      color: var(--salmón-oscuro);
+      color: var(--salmon-oscuro);
     }
 
     .destino-card p {
@@ -183,10 +211,14 @@
       background: white;
       padding: 0.2rem 0.8rem;
       border-radius: 60px;
-      color: var(--salmón-oscuro);
+      color: var(--salmon-oscuro);
       font-weight: 600;
       width: fit-content;
     }
+
+    /* =========================================================
+       GUÍA
+    ========================================================= */
 
     .guia-grid {
       display: grid;
@@ -196,7 +228,7 @@
     }
 
     .guia-item {
-      background: var(--salmón-suave);
+      background: var(--salmon-suave);
       padding: 1rem 1.2rem;
       border-radius: 60px;
       font-weight: 600;
@@ -204,6 +236,10 @@
       color: #1f1c19;
       border: 1px solid #fbcbc0;
     }
+
+    /* =========================================================
+       BLOG
+    ========================================================= */
 
     .blog-list {
       display: flex;
@@ -215,7 +251,7 @@
       background: #faf6f3;
       padding: 1rem 1.5rem;
       border-radius: 60px;
-      border-left: 8px solid var(--salmón);
+      border-left: 8px solid var(--salmon);
       font-weight: 500;
     }
 
@@ -226,6 +262,10 @@
       margin-left: 1rem;
     }
 
+    /* =========================================================
+       CONTACTO
+    ========================================================= */
+
     .contacto-wrap {
       display: flex;
       flex-wrap: wrap;
@@ -235,25 +275,26 @@
     }
 
     .contacto-info {
-      background: var(--salmón-suave);
+      background: var(--salmon-suave);
       padding: 1.2rem 2rem;
       border-radius: 80px;
       font-weight: 500;
     }
 
     .contacto-info a {
-      color: var(--salmón-oscuro);
+      color: var(--salmon-oscuro);
       text-decoration: none;
       font-weight: 600;
     }
 
-    .contacto-info a:hover {
+    .contacto-info a:hover,
+    .contacto-info a:focus {
       text-decoration: underline;
     }
 
-    .btn-salmón {
-      background: var(--salmón);
-      border: none;
+    .btn-salmon {
+      background: var(--salmon);
+      border: 1px solid var(--salmon-oscuro);
       padding: 0.8rem 2.2rem;
       border-radius: 80px;
       font-weight: 700;
@@ -261,16 +302,21 @@
       font-size: 1rem;
       cursor: pointer;
       transition: 0.2s;
-      border: 1px solid var(--salmón-oscuro);
       box-shadow: 0 4px 10px rgba(250, 128, 114, 0.3);
+      text-decoration: none;
+      display: inline-block;
     }
 
-    .btn-salmón:hover {
-      background: var(--salmón-oscuro);
+    .btn-salmon:hover,
+    .btn-salmon:focus {
+      background: var(--salmon-oscuro);
       transform: scale(1.02);
     }
 
-    /* ===== SECCIONES LEGALES ===== */
+    /* =========================================================
+       SECCIONES LEGALES
+    ========================================================= */
+
     .legal-section {
       background: #fcf8f6;
       border: 1px solid #fadcd2;
@@ -278,7 +324,7 @@
     }
 
     .legal-section h2 {
-      color: var(--salmón-oscuro);
+      color: var(--salmon-oscuro);
     }
 
     .legal-section h2::before {
@@ -304,10 +350,15 @@
       margin-bottom: 0.8rem;
     }
 
+    .legal-section a {
+      color: var(--salmon-oscuro);
+      font-weight: 600;
+    }
+
     .legal-section .back-link {
       display: inline-block;
       margin-top: 1.5rem;
-      background: var(--salmón);
+      background: var(--salmon);
       color: white;
       padding: 0.4rem 1.8rem;
       border-radius: 60px;
@@ -316,16 +367,20 @@
       transition: 0.2s;
     }
 
-    .legal-section .back-link:hover {
-      background: var(--salmón-oscuro);
+    .legal-section .back-link:hover,
+    .legal-section .back-link:focus {
+      background: var(--salmon-oscuro);
     }
 
-    /* ===== FOOTER ===== */
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
     footer {
       margin-top: 3rem;
       padding: 2rem 1.5rem;
       border-radius: 32px;
-      background: var(--salmón-suave);
+      background: var(--salmon-suave);
       border: 1px solid #fbcbc0;
       display: flex;
       flex-wrap: wrap;
@@ -349,8 +404,9 @@
       transition: 0.2s;
     }
 
-    footer .legal a:hover {
-      border-bottom-color: var(--salmón);
+    footer .legal a:hover,
+    footer .legal a:focus {
+      border-bottom-color: var(--salmon);
     }
 
     .footer-copy {
@@ -358,7 +414,10 @@
       font-weight: 400;
     }
 
-    /* ===== AVISO DE COOKIES (fijo al final) ===== */
+    /* =========================================================
+       AVISO DE COOKIES
+    ========================================================= */
+
     .cookie-banner {
       position: fixed;
       bottom: 0;
@@ -373,7 +432,7 @@
       justify-content: space-between;
       gap: 1rem;
       z-index: 1000;
-      border-top: 4px solid var(--salmón);
+      border-top: 4px solid var(--salmon);
       box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
       transition: transform 0.4s ease;
     }
@@ -389,12 +448,12 @@
     }
 
     .cookie-banner a {
-      color: var(--salmón-claro);
+      color: var(--salmon-claro);
       text-decoration: underline;
     }
 
     .cookie-banner .cookie-btn {
-      background: var(--salmón);
+      background: var(--salmon);
       border: none;
       padding: 0.5rem 1.8rem;
       border-radius: 60px;
@@ -406,35 +465,55 @@
       white-space: nowrap;
     }
 
-    .cookie-banner .cookie-btn:hover {
-      background: var(--salmón-claro);
+    .cookie-banner .cookie-btn:hover,
+    .cookie-banner .cookie-btn:focus {
+      background: var(--salmon-claro);
       transform: scale(1.02);
     }
 
-    /* ===== RESPONSIVE ===== */
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
     @media (max-width: 700px) {
+
+      body {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+      }
+
       header h1 {
         font-size: 2rem;
       }
+
       header p {
         font-size: 1rem;
       }
+
       section {
         padding: 1.5rem 1.2rem;
       }
+
       nav {
         gap: 0.8rem 1.2rem;
         border-radius: 40px;
         padding: 0.8rem 1rem;
       }
+
       .contacto-wrap {
         flex-direction: column;
         align-items: stretch;
       }
+
+      .btn-salmon {
+        text-align: center;
+      }
+
       footer {
         flex-direction: column;
         text-align: center;
       }
+
       .cookie-banner {
         flex-direction: column;
         text-align: center;
@@ -443,201 +522,730 @@
     }
 
     @media (max-width: 480px) {
+
       .destino-grid {
         grid-template-columns: 1fr;
       }
+
       .guia-grid {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .blog-item {
+        border-radius: 24px;
+      }
+
+      .blog-item span {
+        margin-left: 0;
+        margin-top: 0.3rem;
+        display: block;
       }
     }
   </style>
 </head>
-<body>
+
+<body id="top">
+
   <div class="container">
 
-    <!-- ===== HEADER ===== -->
-    <header>
-      <h1>🇦🇷 <span>BienvenidoGalicia</span></h1>
-      <p>✨ Argentina · guía de lugares y cultura</p>
+    <!-- =======================================================
+         HEADER
+    ======================================================== -->
+
+    <header id="inicio">
+
+      <h1>
+        🇦🇷
+        <span>BienvenidoGalicia</span>
+      </h1>
+
+      <p>
+        Argentina · guía independiente de viajes y cultura
+      </p>
+
     </header>
 
-    <!-- ===== NAVEGACIÓN ===== -->
-    <nav>
-      <a href="/#inicio">Inicio</a>
-      <a href="/#destinos">Destinos</a>
-      <a href="/#guia">Guía de viaje</a>
-      <a href="/#blog">Blog</a>
-      <a href="/#contacto">Contacto</a>
+
+    <!-- =======================================================
+         NAVEGACIÓN
+    ======================================================== -->
+
+    <nav aria-label="Navegación principal">
+
+      <a href="#inicio">Inicio</a>
+
+      <a href="#destinos">Destinos</a>
+
+      <a href="#guia">Guía de viaje</a>
+
+      <a href="#blog">Blog</a>
+
+      <a href="#contacto">Contacto</a>
+
     </nav>
 
-    <!-- ===== DESTINOS ===== -->
+
+    <!-- =======================================================
+         DESTINOS
+    ======================================================== -->
+
     <section id="destinos">
+
       <h2>Destinos imperdibles</h2>
+
       <div class="destino-grid">
-        <div class="destino-card">
+
+        <article class="destino-card">
+
           <h3>Buenos Aires</h3>
-          <p>La vibrante capital con su famoso obelisco, barrios como La Boca y una noche porteña inolvidable.</p>
-          <small>🌆 cultura · tango</small>
-        </div>
-        <div class="destino-card">
+
+          <p>
+            La vibrante capital argentina, conocida por su arquitectura,
+            sus barrios tradicionales, su cultura y el tango.
+          </p>
+
+          <small>
+            🌆 cultura · tango
+          </small>
+
+        </article>
+
+
+        <article class="destino-card">
+
           <h3>Bariloche</h3>
-          <p>En la Patagonia, con lagos de ensueño, chocolate artesanal y pistas de esquí rodeadas de montañas.</p>
-          <small>🏔️ lagos · nieve</small>
-        </div>
-        <div class="destino-card">
+
+          <p>
+            Destino de la Patagonia conocido por sus lagos,
+            paisajes de montaña, chocolate artesanal y actividades
+            al aire libre.
+          </p>
+
+          <small>
+            🏔️ lagos · montaña
+          </small>
+
+        </article>
+
+
+        <article class="destino-card">
+
           <h3>Iguazú</h3>
-          <p>Las majestuosas cataratas, una de las siete maravillas naturales del mundo, en la frontera con Brasil.</p>
-          <small>🌿 naturaleza · agua</small>
-        </div>
-        <div class="destino-card">
+
+          <p>
+            Región donde se encuentran las Cataratas del Iguazú,
+            uno de los principales atractivos naturales de Argentina.
+          </p>
+
+          <small>
+            🌿 naturaleza · agua
+          </small>
+
+        </article>
+
+
+        <article class="destino-card">
+
           <h3>Mendoza</h3>
-          <p>Tierra de bodegas, vinos Malbec y la imponente Aconcagua, el pico más alto de América.</p>
-          <small>🍷 vinos · montaña</small>
-        </div>
+
+          <p>
+            Provincia reconocida por sus bodegas, sus vinos,
+            sus paisajes cordilleranos y su cercanía con el Aconcagua.
+          </p>
+
+          <small>
+            🍇 vinos · montaña
+          </small>
+
+        </article>
+
       </div>
+
     </section>
 
-    <!-- ===== GUÍA DE VIAJE ===== -->
+
+    <!-- =======================================================
+         GUÍA DE VIAJE
+    ======================================================== -->
+
     <section id="guia">
+
       <h2>Guía de viaje</h2>
+
       <div class="guia-grid">
-        <div class="guia-item">🕒 Clima: templado / variado</div>
-        <div class="guia-item">💰 Moneda: Peso argentino (ARS)</div>
-        <div class="guia-item">🚌 Transporte: subte, tren, colectivo</div>
-        <div class="guia-item">🔌 Enchufe: tipo I (220V)</div>
-        <div class="guia-item">📞 Emergencias: 911</div>
-        <div class="guia-item">🧉 Costumbre: mate y asado</div>
-      </div>
-      <p style="margin-top: 1.2rem; background: var(--salmón-suave); padding: 0.5rem 1.5rem; border-radius: 60px; display: inline-block;">
-        📌 Consejo: siempre llevá efectivo para pagos en rutas y mercados locales.
-      </p>
-    </section>
 
-    <!-- ===== BLOG ===== -->
-    <section id="blog">
-      <h2>Blog · novedades</h2>
-      <div class="blog-list">
-        <div class="blog-item">📰 3 pueblos patagónicos que tenés que conocer <span>— 2 de agosto 2026</span></div>
-        <div class="blog-item">🍷 Ruta del vino en Mendoza: bodegas boutique <span>— 30 de julio 2026</span></div>
-        <div class="blog-item">🌎 Cómo ahorrar en tu viaje por Argentina (cambio y tarjetas) <span>— 28 de julio 2026</span></div>
-        <div class="blog-item">🐧 Península Valdés: ballenas y pingüinos <span>— 25 de julio 2026</span></div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACTO ===== -->
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <div class="contacto-wrap">
-        <div class="contacto-info">
-          📧 <a href="mailto:contacto@bienvenidosgalicia.vercel.app">contacto@bienvenidosgalicia.vercel.app</a>
+        <div class="guia-item">
+          🕒 Clima: variado según la región
         </div>
-        <button class="btn-salmón" onclick="window.location.href='mailto:contacto@bienvenidosgalicia.vercel.app';">Enviar mensaje</button>
+
+        <div class="guia-item">
+          💰 Moneda: peso argentino
+        </div>
+
+        <div class="guia-item">
+          🚌 Transporte: transporte público y privado
+        </div>
+
+        <div class="guia-item">
+          🔌 Electricidad: 220V
+        </div>
+
+        <div class="guia-item">
+          🧭 Recomendación: consultar información local
+        </div>
+
+        <div class="guia-item">
+          🧉 Cultura: mate y gastronomía argentina
+        </div>
+
       </div>
-      <p style="margin-top: 1.2rem; font-size: 0.9rem; background: #f2efed; padding: 0.5rem 1.5rem; border-radius: 60px; display: inline-block;">
-        ⚡ Atención personalizada · Respondemos en 24h
+
+      <p
+        style="
+          margin-top: 1.2rem;
+          background: var(--salmon-suave);
+          padding: 0.7rem 1.5rem;
+          border-radius: 60px;
+          display: inline-block;
+        "
+      >
+        📌 Consejo: verifica horarios, precios y disponibilidad
+        directamente con los proveedores antes de realizar un viaje.
       </p>
+
     </section>
 
-    <!-- ========================================================= -->
-    <!-- ===== SECCIONES LEGALES ===== -->
-    <!-- ========================================================= -->
 
-    <!-- ACERCA DE NOSOTROS -->
-    <section id="acerca" class="legal-section">
+    <!-- =======================================================
+         BLOG
+    ======================================================== -->
+
+    <section id="blog">
+
+      <h2>Blog · novedades</h2>
+
+      <div class="blog-list">
+
+        <article class="blog-item">
+          📰
+          3 pueblos patagónicos que puedes conocer
+          <span>— 2 de agosto de 2026</span>
+        </article>
+
+        <article class="blog-item">
+          🍷
+          Ruta del vino en Mendoza: recomendaciones para viajeros
+          <span>— 30 de julio de 2026</span>
+        </article>
+
+        <article class="blog-item">
+          🌎
+          Consejos para organizar un viaje por Argentina
+          <span>— 28 de julio de 2026</span>
+        </article>
+
+        <article class="blog-item">
+          🐧
+          Península Valdés: naturaleza y fauna
+          <span>— 25 de julio de 2026</span>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CONTACTO
+    ======================================================== -->
+
+    <section id="contacto">
+
+      <h2>Contacto</h2>
+
+      <div class="contacto-wrap">
+
+        <div class="contacto-info">
+
+          📧
+
+          <a href="mailto:contacto@bienvenidosgalicia.vercel.app">
+            contacto@bienvenidosgalicia.vercel.app
+          </a>
+
+        </div>
+
+
+        <a
+          class="btn-salmon"
+          href="mailto:contacto@bienvenidosgalicia.vercel.app"
+        >
+          Enviar mensaje
+        </a>
+
+      </div>
+
+      <p
+        style="
+          margin-top: 1.2rem;
+          font-size: 0.9rem;
+          background: #f2efed;
+          padding: 0.7rem 1.5rem;
+          border-radius: 60px;
+          display: inline-block;
+        "
+      >
+        ℹ️ Puedes utilizar este correo para consultas relacionadas
+        con el contenido del sitio.
+      </p>
+
+    </section>
+
+
+    <!-- =======================================================
+         ACERCA DE NOSOTROS
+    ======================================================== -->
+
+    <section
+      id="acerca"
+      class="legal-section"
+    >
+
       <h2>Acerca de nosotros</h2>
-      <p><strong>BienvenidoGalicia</strong> es un proyecto independiente de guía de viajes creado por apasionados por Argentina.</p>
-      <p>Nuestro objetivo es compartir información útil, actualizada y auténtica sobre los destinos más fascinantes del país, desde la vibrante Buenos Aires hasta la imponente Patagonia.</p>
-      <p>Creemos en el viaje consciente y en conectar a los viajeros con la cultura, la gastronomía y las tradiciones locales. Toda la información que publicamos es el resultado de nuestra propia experiencia y de la colaboración con amigos y viajeros que aman Argentina tanto como nosotros.</p>
-      <p><strong>¿Por qué "Galicia"?</strong> Es un homenaje a la herencia gallega en Argentina y una invitación a sentirte bienvenido, como en casa, en cada rincón del país.</p>
-      <a href="/#top" class="back-link">← Volver al inicio</a>
+
+      <p>
+        <strong>BienvenidoGalicia</strong> es un proyecto independiente
+        dedicado a recopilar y presentar información turística y cultural
+        sobre Argentina.
+      </p>
+
+      <p>
+        El objetivo del sitio es ofrecer a los visitantes una referencia
+        sencilla para conocer diferentes destinos, aspectos culturales
+        y recomendaciones generales para organizar un viaje.
+      </p>
+
+      <p>
+        El contenido publicado tiene carácter informativo. Los horarios,
+        precios, servicios y condiciones de los establecimientos o
+        actividades pueden cambiar, por lo que recomendamos verificar
+        la información directamente con los proveedores correspondientes.
+      </p>
+
+      <p>
+        El sitio no representa ni actúa en nombre de organismos públicos,
+        entidades financieras, agencias de viajes u otras empresas
+        mencionadas en contenidos informativos, salvo que se indique
+        expresamente lo contrario.
+      </p>
+
+      <h3>¿Por qué "Galicia"?</h3>
+
+      <p>
+        El nombre del proyecto hace referencia a la herencia cultural
+        gallega presente en Argentina y forma parte de la identidad
+        editorial de este sitio.
+      </p>
+
+      <a
+        href="#top"
+        class="back-link"
+      >
+        ← Volver al inicio
+      </a>
+
     </section>
 
-    <!-- POLÍTICA DE PRIVACIDAD -->
-    <section id="privacidad" class="legal-section">
+
+    <!-- =======================================================
+         POLÍTICA DE PRIVACIDAD
+    ======================================================== -->
+
+    <section
+      id="privacidad"
+      class="legal-section"
+    >
+
       <h2>Política de privacidad</h2>
-      <p><strong>Última actualización:</strong> 3 de agosto de 2026</p>
-      <p>En <strong>BienvenidoGalicia</strong> nos tomamos muy en serio tu privacidad. Esta política explica cómo recopilamos, usamos y protegemos tu información.</p>
+
+      <p>
+        <strong>Última actualización:</strong>
+        8 de agosto de 2026
+      </p>
+
+      <p>
+        En <strong>BienvenidoGalicia</strong> respetamos la privacidad
+        de nuestros visitantes. Esta política explica de manera general
+        qué información puede proporcionarse mediante los canales de
+        contacto disponibles en este sitio y cómo se utiliza.
+      </p>
+
 
       <h3>1. Información que recopilamos</h3>
-      <p>Recopilamos la información que nos proporcionas voluntariamente a través de nuestro formulario de contacto o correo electrónico, como tu nombre y dirección de correo electrónico.</p>
+
+      <p>
+        El sitio no solicita información financiera, contraseñas,
+        credenciales bancarias ni datos de tarjetas de pago.
+      </p>
+
+      <p>
+        Si una persona decide ponerse en contacto con nosotros mediante
+        correo electrónico, puede proporcionar voluntariamente información
+        como su nombre, dirección de correo electrónico y el contenido
+        de su consulta.
+      </p>
+
 
       <h3>2. Uso de la información</h3>
-      <p>Usamos tu información únicamente para responder a tus consultas y enviarte información relacionada con tus preguntas. No compartimos tus datos con terceros.</p>
 
-      <h3>3. Cookies</h3>
-      <p>Este sitio utiliza cookies técnicas y de sesión para mejorar tu experiencia. No utilizamos cookies de seguimiento publicitario.</p>
+      <p>
+        La información recibida mediante contacto se utiliza únicamente
+        para atender consultas, responder mensajes y mantener la
+        comunicación relacionada con la solicitud realizada por el visitante.
+      </p>
+
+
+      <h3>3. Cookies y almacenamiento local</h3>
+
+      <p>
+        Este sitio utiliza almacenamiento local del navegador
+        exclusivamente para recordar si el visitante ha cerrado o aceptado
+        el aviso de cookies mostrado en la página.
+      </p>
+
+      <p>
+        Si en el futuro se incorporan herramientas de análisis,
+        publicidad, contenido de terceros u otras tecnologías que utilicen
+        cookies o tecnologías similares, esta política deberá actualizarse
+        para reflejar correctamente dichas herramientas.
+      </p>
+
 
       <h3>4. Enlaces externos</h3>
-      <p>Nuestra página puede contener enlaces a sitios externos. No somos responsables de sus políticas de privacidad.</p>
 
-      <h3>5. Tus derechos</h3>
-      <p>Puedes solicitar la eliminación de tus datos personales en cualquier momento escribiéndonos a <a href="mailto:contacto@bienvenidosgalicia.vercel.app">contacto@bienvenidosgalicia.vercel.app</a>.</p>
+      <p>
+        El sitio puede incorporar enlaces hacia páginas externas.
+        Dichas páginas tienen sus propias políticas de privacidad y
+        condiciones de uso. Recomendamos consultar sus políticas antes
+        de proporcionar información personal.
+      </p>
 
-      <a href="/#top" class="back-link">← Volver al inicio</a>
+
+      <h3>5. Conservación de información</h3>
+
+      <p>
+        La información recibida mediante contacto se conserva únicamente
+        durante el tiempo razonablemente necesario para atender la consulta
+        correspondiente y cumplir las obligaciones aplicables.
+      </p>
+
+
+      <h3>6. Solicitudes relacionadas con datos personales</h3>
+
+      <p>
+        Para realizar una consulta relacionada con la información enviada
+        mediante nuestros canales de contacto, puedes escribir a:
+      </p>
+
+      <p>
+        <a href="mailto:contacto@bienvenidosgalicia.vercel.app">
+          contacto@bienvenidosgalicia.vercel.app
+        </a>
+      </p>
+
+
+      <a
+        href="#top"
+        class="back-link"
+      >
+        ← Volver al inicio
+      </a>
+
     </section>
 
-    <!-- TÉRMINOS Y CONDICIONES -->
-    <section id="terminos" class="legal-section">
+
+    <!-- =======================================================
+         TÉRMINOS Y CONDICIONES
+    ======================================================== -->
+
+    <section
+      id="terminos"
+      class="legal-section"
+    >
+
       <h2>Términos y condiciones</h2>
-      <p><strong>Última actualización:</strong> 3 de agosto de 2026</p>
-      <p>Al usar este sitio web, aceptas los siguientes términos y condiciones.</p>
 
-      <h3>1. Uso del contenido</h3>
-      <p>Todo el contenido de BienvenidoGalicia es informativo y está basado en experiencias personales. No nos hacemos responsables por cambios en horarios, precios o disponibilidad de los servicios mencionados.</p>
+      <p>
+        <strong>Última actualización:</strong>
+        8 de agosto de 2026
+      </p>
 
-      <h3>2. Propiedad intelectual</h3>
-      <p>Los textos, imágenes y diseño de este sitio son propiedad de BienvenidoGalicia. No está permitida su reproducción sin autorización expresa.</p>
+      <p>
+        Al acceder y utilizar este sitio aceptas las siguientes
+        condiciones de uso.
+      </p>
 
-      <h3>3. Enlaces a terceros</h3>
-      <p>Este sitio puede contener enlaces a páginas externas. No somos responsables del contenido o prácticas de esos sitios.</p>
 
-      <h3>4. Modificaciones</h3>
-      <p>Nos reservamos el derecho de actualizar estos términos en cualquier momento. Los cambios serán publicados en esta misma sección.</p>
+      <h3>1. Naturaleza del sitio</h3>
 
-      <h3>5. Ley aplicable</h3>
-      <p>Estos términos se rigen por las leyes de la República Argentina.</p>
+      <p>
+        BienvenidoGalicia es un proyecto independiente de carácter
+        informativo y turístico.
+      </p>
 
-      <a href="/#top" class="back-link">← Volver al inicio</a>
+      <p>
+        El contenido publicado no constituye asesoramiento profesional,
+        reserva de servicios ni garantía sobre la disponibilidad de
+        establecimientos, actividades, transporte u otros servicios
+        mencionados.
+      </p>
+
+
+      <h3>2. Exactitud de la información</h3>
+
+      <p>
+        Procuramos mantener la información del sitio actualizada.
+        Sin embargo, determinados datos pueden cambiar con el tiempo,
+        incluyendo precios, horarios, disponibilidad, requisitos y
+        condiciones de servicios externos.
+      </p>
+
+      <p>
+        Antes de tomar una decisión basada en información publicada en
+        este sitio, recomendamos verificar los datos directamente con
+        la fuente o proveedor correspondiente.
+      </p>
+
+
+      <h3>3. Propiedad intelectual</h3>
+
+      <p>
+        Los elementos originales del sitio, incluyendo textos, estructura
+        y diseño, pertenecen a sus respectivos titulares. No está permitida
+        la reproducción de contenido protegido sin la autorización
+        correspondiente.
+      </p>
+
+
+      <h3>4. Enlaces a terceros</h3>
+
+      <p>
+        Los enlaces hacia sitios externos pueden estar sujetos a términos,
+        condiciones y políticas independientes de las de BienvenidoGalicia.
+        No controlamos las prácticas de terceros.
+      </p>
+
+
+      <h3>5. Modificaciones</h3>
+
+      <p>
+        Podemos actualizar el contenido, diseño y estas condiciones cuando
+        resulte necesario. La fecha de actualización se indicará en esta
+        sección.
+      </p>
+
+
+      <h3>6. Uso responsable</h3>
+
+      <p>
+        Los visitantes deben utilizar este sitio de forma lícita y
+        responsable y evitar cualquier uso que pueda perjudicar el
+        funcionamiento del sitio o a otros usuarios.
+      </p>
+
+
+      <a
+        href="#top"
+        class="back-link"
+      >
+        ← Volver al inicio
+      </a>
+
     </section>
 
-    <!-- ===== FOOTER ===== -->
+
+    <!-- =======================================================
+         COOKIES
+    ======================================================== -->
+
+    <section
+      id="cookies"
+      class="legal-section"
+    >
+
+      <h2>Política de cookies</h2>
+
+      <p>
+        <strong>Última actualización:</strong>
+        8 de agosto de 2026
+      </p>
+
+      <p>
+        Este sitio utiliza almacenamiento local del navegador para recordar
+        la preferencia del visitante respecto al aviso informativo de cookies.
+      </p>
+
+      <h3>1. ¿Qué utilizamos?</h3>
+
+      <p>
+        Actualmente se utiliza <strong>localStorage</strong> del navegador
+        para guardar una preferencia relacionada con el aviso mostrado
+        en la parte inferior de la página.
+      </p>
+
+      <h3>2. ¿Para qué se utiliza?</h3>
+
+      <p>
+        Se utiliza para evitar que el mismo aviso aparezca nuevamente
+        después de que el visitante haya indicado su preferencia.
+      </p>
+
+      <h3>3. Cambios futuros</h3>
+
+      <p>
+        Si se incorporan servicios de terceros que utilicen cookies,
+        almacenamiento local u otras tecnologías de seguimiento,
+        esta política deberá actualizarse para describirlos de forma
+        clara y precisa.
+      </p>
+
+      <a
+        href="#top"
+        class="back-link"
+      >
+        ← Volver al inicio
+      </a>
+
+    </section>
+
+
+    <!-- =======================================================
+         FOOTER
+    ======================================================== -->
+
     <footer>
+
       <div class="legal">
-        <a href="/#acerca">Acerca de nosotros</a>
-        <a href="/#privacidad">Política de privacidad</a>
-        <a href="/#terminos">Términos y condiciones</a>
-        <a href="/#cookies">Cookies</a>
+
+        <a href="#acerca">
+          Acerca de nosotros
+        </a>
+
+        <a href="#privacidad">
+          Política de privacidad
+        </a>
+
+        <a href="#terminos">
+          Términos y condiciones
+        </a>
+
+        <a href="#cookies">
+          Cookies
+        </a>
+
       </div>
+
       <div class="footer-copy">
         © 2026 BienvenidoGalicia · Argentina
       </div>
+
     </footer>
 
   </div>
-  <!-- cierre container -->
 
-  <!-- ===== AVISO DE COOKIES (con JavaScript) ===== -->
-  <div id="cookieBanner" class="cookie-banner">
+
+  <!-- =========================================================
+       AVISO DE COOKIES
+  ========================================================== -->
+
+  <div
+    id="cookieBanner"
+    class="cookie-banner"
+    role="dialog"
+    aria-label="Aviso de cookies"
+  >
+
     <p>
-      🍪 Usamos cookies técnicas para mejorar tu experiencia. Al continuar navegando, aceptas nuestra 
-      <a href="/#privacidad">Política de privacidad</a> y el uso de cookies.
+      🍪 Utilizamos almacenamiento local del navegador para recordar
+      tu preferencia respecto a este aviso.
+      <a href="#cookies">
+        Más información
+      </a>
     </p>
-    <button class="cookie-btn" onclick="aceptarCookies()">Aceptar</button>
+
+    <button
+      type="button"
+      class="cookie-btn"
+      onclick="aceptarCookies()"
+    >
+      Aceptar
+    </button>
+
   </div>
 
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
   <script>
-    // Función para ocultar el banner y guardar la preferencia en localStorage
+
     function aceptarCookies() {
-      document.getElementById('cookieBanner').classList.add('hidden');
-      localStorage.setItem('cookiesAceptadas', 'true');
+
+      const banner =
+        document.getElementById('cookieBanner');
+
+      if (banner) {
+        banner.classList.add('hidden');
+      }
+
+      try {
+        localStorage.setItem(
+          'cookiesAceptadas',
+          'true'
+        );
+      } catch (error) {
+        console.warn(
+          'No fue posible guardar la preferencia.',
+          error
+        );
+      }
     }
 
-    // Al cargar la página, comprobar si ya aceptó las cookies
-    window.onload = function() {
-      if (localStorage.getItem('cookiesAceptadas') === 'true') {
-        document.getElementById('cookieBanner').classList.add('hidden');
+
+    function comprobarCookies() {
+
+      try {
+
+        if (
+          localStorage.getItem('cookiesAceptadas') === 'true'
+        ) {
+
+          const banner =
+            document.getElementById('cookieBanner');
+
+          if (banner) {
+            banner.classList.add('hidden');
+          }
+
+        }
+
+      } catch (error) {
+
+        console.warn(
+          'No fue posible leer la preferencia.',
+          error
+        );
+
       }
-    };
+    }
+
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      comprobarCookies
+    );
+
   </script>
 
 </body>
